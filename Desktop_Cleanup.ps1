@@ -38,8 +38,14 @@
 #> 
 
 
-# Collects shortcut files on the user's desktop
+# Collects shortcut files on the user's desktop that is running the script
 $myshortcuts = Get-ChildItem -Path $env:HOMEPATH\Desktop | Where-Object {$_.Extension -eq ".lnk"}
 
 # Removes the shortcuts located on the user's desktop
 Remove-Item $myshortcuts.FullName -Force -Confirm:$false
+
+# Collects shortcut files on Public's desktop
+$publicshortcuts = Get-ChildItem -Path $env:PUBLIC\Desktop | Where-Object {$_.Extension -eq ".lnk"}
+
+# Removes the shortcuts located on Public's desktop
+Remove-Item $publicshortcuts.FullName -Force -Confirm:$false
