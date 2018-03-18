@@ -42,4 +42,4 @@
 $myshortcuts = Get-ChildItem -Path $env:HOMEPATH\Desktop | Where-Object {$_.Extension -eq ".lnk"}
 
 # Removes the shortcuts located on the user's desktop
-Remove-Item $myshortcuts -Force -Confirm:$false
+Remove-Item $myshortcuts.FullName -Force -Confirm:$false
