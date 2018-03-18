@@ -36,6 +36,10 @@
  Cleans up shortcuts on the user's desktop as well as the Public Desktop 
 
 #> 
-Param()
 
 
+# Collects shortcut files on the user's desktop
+$myshortcuts = Get-ChildItem -Path $env:HOMEPATH\Desktop | Where-Object {$_.Extension -eq ".lnk"}
+
+# Removes the shortcuts located on the user's desktop
+Remove-Item $myshortcuts -Force -Confirm:$false
