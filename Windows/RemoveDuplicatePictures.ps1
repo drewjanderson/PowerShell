@@ -1,0 +1,1 @@
+# To remove duplicate picture and video files from a given directory
