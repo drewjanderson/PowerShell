@@ -9,5 +9,5 @@ foreach ($dir in $subdirectories.FullName) {
     $dupespath = New-Item -Path $dir -Name "Duplicates" -ItemType Directory -Confirm:$false
     $items = Get-ChildItem -Path $dir
     $dupes = $items | Where-Object {$_.Name -like "*(*"}
-    $dupes | Move-Item -Destination $dupespath -Confirm:$false
+    $dupes | Move-Item -Destination $dupespath -Confirm:$false -Verbose -ErrorAction SilentlyContinue
 }
