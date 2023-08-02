@@ -64,7 +64,7 @@ foreach ($sub in $subscriptions.Name) {
     # Capture all resources (including Hidden) for the subscription
     $resourceinfo = Get-AzResource | Sort-Object ResourceType
     
-    # After individual VM information is collected push the data into the table to prepare to export information for all queried VMs
+    # After individual resource information is collected push the data into the table to prepare to export information for all queried resources
     $resourceinformationlist += $resourceinfo
 }
 
