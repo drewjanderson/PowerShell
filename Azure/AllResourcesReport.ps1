@@ -62,7 +62,7 @@ foreach ($sub in $subscriptions.Name) {
     Select-AzSubscription -SubscriptionName $sub
     
     # Capture all resources (including Hidden) for the subscription
-    $resourceinfo = Get-AzResource | Select-Object Name, ResourceGroupName, Location, ResourceType, Kind, ManagedBy, ParentResource, Tags, SubscriptionId | Sort-Object ResourceType
+    $resourceinfo = Get-AzResource | Select-Object Name, ResourceGroupName, Location, ResourceType, Kind, ManagedBy, ParentResource, SubscriptionId | Sort-Object ResourceType
     
     # After individual resource information is collected push the data into the table to prepare to export information for all queried resources
     $resourceinformationlist += $resourceinfo
