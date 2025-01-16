@@ -2,7 +2,7 @@
 # Author: Drew Anderson                                                                             #
 # Description: This script collects information for all resources within an Azure tenant.           #
 #                                                                                                   #
-# Minimum Access Requirements: Azure Active Directory User role (no elevated AAD RBAC required)     #
+# Minimum Access Requirements: Entra ID User role (no elevated Entra ID RBAC required)              #
 #                              Reader IAM role on each subscription                                 #
 #                                                                                                   #
 # PowerShell Requirements: Windows PowerShell 5.1                                                   #
@@ -37,7 +37,7 @@ $outputdirectorypath = New-Item -Path $reportdirectory -Name $outputdirectory -I
 # Connects to Azure with the Az module
 Connect-AzAccount -Tenant $tenantID
 
-# Captures Azure AD and user information for README
+# Captures Entra ID tenant and user information for README
 $aadinfo = Get-AzADOrganization | Select-Object DisplayName, Id
 $aaddisplayname = $aadinfo.DisplayName
 $userinfo = Get-AzAccessToken
